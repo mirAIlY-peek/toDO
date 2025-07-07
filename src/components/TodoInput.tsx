@@ -1,4 +1,4 @@
-import { useState,FormEvent } from "react";
+import { useState } from "react";
 
 interface Props {
     onAdd: (text: string) => void;
@@ -7,7 +7,7 @@ interface Props {
 export default function TodoInput({ onAdd }: Props) {
     const [text, setText] = useState("");
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (text.trim()) {
             onAdd(text.trim());
